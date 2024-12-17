@@ -1,0 +1,37 @@
+<mat-toolbar class="top-menu">
+  <div>Assignment</div>
+</mat-toolbar>
+
+<div class="layout">
+  <mat-toolbar class="left-side">
+    <mat-list role="list">
+      <mat-list-item role="listitem" routerLink="/home" class="list-item">
+        <mat-icon fontIcon="home"></mat-icon>
+        <label>Home</label>
+      </mat-list-item>
+      <mat-list-item role="listitem" routerLink="/user" class="list-item">
+        <mat-icon fontIcon="person"></mat-icon>
+        <label>User</label>
+      </mat-list-item>
+      <mat-list-item role="listitem" routerLink="/settings" class="list-item">
+        <mat-icon fontIcon="settings"></mat-icon>
+        Settings
+      </mat-list-item>
+    </mat-list>
+  </mat-toolbar> <!-- left menu ends -->
+
+  <div class="right-side">
+    <mat-toolbar class="sub-menu">
+      @if (isUserRoute()) {
+        <div>
+          <button mat-button>Create</button>
+          <span class="divider">|</span>
+          <button mat-button>Import</button>
+        </div>
+      }
+    </mat-toolbar>
+    <div class="main-content">
+      <router-outlet/>
+    </div>
+  </div>
+</div>

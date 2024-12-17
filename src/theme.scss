@@ -1,0 +1,13 @@
+@use '@angular/material' as mat;
+// Setting up default color theme using angular material
+html {
+  color-scheme: light dark;
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$red-palette,
+    ),
+    typography: Roboto,
+    density: 0
+  ));
+}
