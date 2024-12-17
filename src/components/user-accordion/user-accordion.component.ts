@@ -27,7 +27,9 @@ export class UserAccordionComponent {
   onDelete(event: Event) {
     event.stopPropagation();
     const dialogData: DialogData = { title: 'Are you sure?', inputValueToBeChecked: this.user().name };
+
     const dialog = this.dialog.open(ConfirmationModalComponent, { data: dialogData });
+
     dialog.afterClosed().subscribe(result => {
       if (result && dialogData.inputValueToBeChecked) {
         this.deleteUser.emit(this.user().id);
