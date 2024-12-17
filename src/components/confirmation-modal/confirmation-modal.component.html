@@ -1,0 +1,27 @@
+@if (data) {
+  <div>
+    <h2 mat-dialog-title>{{ data.title }}</h2>
+    <mat-dialog-content>
+      @if (data.inputValueToBeChecked) {
+        <p>What's your favorite animal?</p>
+        <mat-form-field>
+          <mat-label>Please confirm the name</mat-label>
+          <input matInput [(ngModel)]="inputValue"/>
+        </mat-form-field>
+      }
+      @if (validationError()) {
+        <mat-error>Name does not match</mat-error>
+      }
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      @if (!data.isAlert) {
+        <button mat-button mat-dialog-close>No</button>
+      }
+      <button mat-button
+              (click)="onConfirm()"
+              [disabled]="!data.isAlert && data.inputValueToBeChecked && !inputValue.trim()">
+        {{ data.isAlert ? 'Ok' : 'Yes' }}
+      </button>
+    </mat-dialog-actions>
+  </div>
+}
