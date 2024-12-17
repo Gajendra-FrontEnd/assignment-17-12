@@ -1,0 +1,7 @@
+<div class="user-container">
+  <mat-accordion>
+    @for (user of users | async; track user) {
+      <app-user-accordion [user]="user" (deleteUser)="onDeleteUser($event)"></app-user-accordion>
+    }
+  </mat-accordion>
+</div>

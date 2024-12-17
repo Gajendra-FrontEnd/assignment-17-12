@@ -1,0 +1,65 @@
+.dashboard-container {
+  padding: 20px;
+  display: flex;
+
+  .company-list {
+    flex: 50;
+    margin: 5px 25px;
+
+    h3 {
+      text-align: center;
+    }
+
+    .company-count-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #000;
+
+      th {
+        background-color: lightgray;
+      }
+
+      th, td {
+        border: 1px solid black;
+        padding: 10px 5px;
+
+        &:last-child {
+          text-align: center;
+        }
+      }
+
+
+    }
+  }
+
+  .count-card {
+    display: flex;
+    flex-direction: column;
+    flex: 50;
+
+    .card {
+      display: flex;
+      margin: 25px;
+      padding: 25px;
+      text-align: center;
+
+      .card-content {
+        .title {
+          color: green;
+        }
+
+        .count {
+          color: darkred;
+        }
+      }
+    }
+  }
+
+  .no-data-error {
+    padding: 10px;
+    text-align: center;
+    flex: 100;
+  }
+}
+
+

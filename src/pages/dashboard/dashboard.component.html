@@ -1,0 +1,42 @@
+<div class="dashboard-container">
+  @if ((users | async)?.length) {
+    <div class="company-list">
+      <h3>Number of users per each company</h3>
+      <table class="company-count-table">
+        <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>User Count</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (item of companyData | keyvalue; track item.key) {
+            <tr>
+              <td>{{ item.key }}</td>
+              <td>{{ item.value }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="count-card">
+      <mat-card appearance="outlined" class="card">
+        <div class="card-content">
+          <h3 class="title">Total number of Users</h3>
+          <h1 class="count">{{ (users | async)?.length }}</h1>
+        </div>
+      </mat-card>
+
+      <mat-card appearance="outlined" class="card">
+        <div class="card-content">
+          <h3 class="title">Total number of Companies</h3>
+          <h1 class="count">{{ totalCompany }}</h1>
+        </div>
+      </mat-card>
+    </div>
+  } @else {
+    <mat-card appearance="outlined" class="no-data-error">
+      <h2>No Data to show! </h2>
+    </mat-card>
+  }
+</div>

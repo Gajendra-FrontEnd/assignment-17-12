@@ -1,0 +1,17 @@
+.settings-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .setting-options {
+    display: flex;
+
+    .form-field {
+      flex: 50;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+}
